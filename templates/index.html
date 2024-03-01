@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Prediction | Machine Learning</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1> Laptop Price Prediction</h1>
+    <div class="login">
+        <form action="{{url_for('predict')}}" method="post">
+            <div class="container">
+                <label for="ram">RAM</label>
+                <input type="text" name="Ram" id='ram' placeholder="(in GBs)" required>
+            </div>
+            <br>
+            <div class="container">
+                <label for="memory">Storage(in GBs)</label>
+                <input type="text" name="memory_ssd" id="ssd-memory" placeholder="SSD" required>
+                <input type="text" name="memory_hdd" id="hdd-memory" placeholder="HDD" required>
+                <input type="text" name="memory_hybrid" id="hybrid-memory" placeholder="Hybrid" required>
+                <input type="text" name="memory_flash" id="flash-memory" placeholder="Flash" required>
+            </div>
+            <br>
+            <div class="container">
+                <label for="resolution">Resolution</label>
+                <input type="text" name="screen_width" placeholder="width" required>
+                <h2 style="margin: auto 0rem;">X</h3>
+                <input type="text" name="screen_height" placeholder="height" required>
+            </div>
+            <br>
+            <div class="container">
+                <label for="typename">Typename</label>
+                <select name="typename" id="typename">
+                    <option value="Gaming">Gaming</option>
+                    <option value="Netbook">Netbook</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Ultrabook">Ultrabook</option>
+                    <option value="Workstation">Workstation</option>
+                    <option value="2 in 1 convertible">2 in 1 convertible</option>
+                </select>
+            </div>
+            <br>
+            <div class="container">
+                <label for="cpu-speed">Cpu Speed</label>
+                <input type="text" name="cpu_speed" id="cpu-speed" placeholder="(in GHz)" required>
+            </div>
+            <br>
+            <div class="container">
+                <label for="gpu">GPU</label>
+                <select name="gpu" id="gpu">
+                    <option value="AMD">AMD</option>
+                    <option value="ARM">ARM</option>
+                    <option value="Intel">Intel</option>
+                    <option value="Nvidia">Nvidia</option>
+                </select>
+            </div>
+            <br>
+            <div class="container">
+                <label for="company">Company</label>
+                <select name="company" id="company">
+                    <option value="Acer">Acer</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Chuwi">Chuwi</option>
+                    <option value="Dell">Dell</option>
+                    <option value="Fujitsu">Fujitsu</option>
+                    <option value="Google">Google</option>
+                    <option value="HP">HP</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="LG">LG</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="MSI">MSI</option>
+                    <option value="Mediacom">Mediacom</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Razer">Razer</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Toshiba">Toshiba</option>
+                    <option value="Vero">Vero</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                </select>
+            </div>
+            <br>
+            <div class="container">
+                <label for="weight">Weight</label>
+                <input type="text" name="weight" placeholder="(in Kgs)" required>
+            </div>
+            <br>
+            <div class="container">
+                <label for="cpu-manufacturer">Cpu Manufacturer</label>
+                <select name="cpu_company" id="cpu-manufacturer">
+                    <option value="AMD">AMD</option>
+                    <option value="Intel">Intel</option>
+                    <option value="Samsung">Samsung</option>
+                </select>
+            </div>
+            <br>
+            <div class="container">
+                <label for="opsys">Operating System</label>
+                <select name="opsys" id="opsys">
+                    <option value="Android">Android</option>
+                    <option value="Chrome OS">Chrome OS</option>
+                    <option value="Linux">Linux</option>
+                    <option value="Mac OS X">MacOS X</option>
+                    <option value="No OS">None</option>
+                    <option value="Windows 10">Windows 10</option>
+                    <option value="Windows 10 S">Windows 10 S</option>
+                    <option value="Windows 7">Windows 7</option>
+                    <option value="macOS">MacOS</option>
+                </select>
+            </div>
+            <br>
+            <div class="container">
+                <label for="Inches">Inches</label>
+                <input type="text" name="Inches" id="Inches" placeholder="numeric value" required>
+            </div>
+            <br>
+            <input type="submit" class="btn" value="Predict">
+        </form>
+    </div>
+
+    <div>
+        <h3>Predicted price is {{prediction}}INR</h3>
+    </div>
+</body>
+</html>
